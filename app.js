@@ -30,6 +30,9 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
+// Add this line to serve static files
+app.use(express.static('public'));
+
 // Routes
 app.get('/', (req, res) => {
   // Handle the home page when we haven't queried yet
